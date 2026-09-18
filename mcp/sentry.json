@@ -1,0 +1,10 @@
+{
+  "$comment": "Sentry MCP server. Requires: SENTRY_AUTH_TOKEN with org:read, project:read, event:read scopes",
+  "mcpServers": {
+    "sentry": {
+      "command": "uvx",
+      "args": ["mcp-server-sentry", "--auth-token", "YOUR_SENTRY_TOKEN"],
+      "disabled": false
+    }
+  }
+}

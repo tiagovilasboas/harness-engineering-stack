@@ -1,0 +1,18 @@
+{
+  "$comment": "Jira + Confluence MCP server. Requires: JIRA_URL, JIRA_EMAIL, JIRA_API_TOKEN, CONFLUENCE_URL",
+  "mcpServers": {
+    "mcp-atlassian": {
+      "command": "uvx",
+      "args": ["mcp-atlassian"],
+      "env": {
+        "JIRA_URL": "https://YOUR_ORG.atlassian.net",
+        "JIRA_EMAIL": "YOUR_EMAIL",
+        "JIRA_API_TOKEN": "YOUR_JIRA_TOKEN",
+        "CONFLUENCE_URL": "https://YOUR_ORG.atlassian.net/wiki",
+        "CONFLUENCE_EMAIL": "YOUR_EMAIL",
+        "CONFLUENCE_API_TOKEN": "YOUR_CONFLUENCE_TOKEN"
+      },
+      "disabled": false
+    }
+  }
+}

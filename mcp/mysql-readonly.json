@@ -1,0 +1,17 @@
+{
+  "$comment": "MySQL read-only MCP server. Use a read replica with SELECT-only permissions.",
+  "mcpServers": {
+    "mysql-readonly": {
+      "command": "uvx",
+      "args": ["mysql-mcp-server"],
+      "env": {
+        "MYSQL_HOST": "YOUR_READ_REPLICA_HOST",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "readonly_user",
+        "MYSQL_PASSWORD": "YOUR_PASSWORD",
+        "MYSQL_DATABASE": "YOUR_DATABASE"
+      },
+      "disabled": false
+    }
+  }
+}
