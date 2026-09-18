@@ -94,25 +94,25 @@ If the incident is ongoing and severe:
 
 ## Example output
 
-**Incident**: VSUS-755 - Webhook payloads missing transaction data
+**Incident**: PROJ-123 - Webhook payloads missing transaction data
 
-**Blast radius**: ~200 sellers, 15% of webhook deliveries, integration sync broken
+**Blast radius**: ~200 merchants, 15% of webhook deliveries, integration sync broken
 
 **Timeline**:
 - 14:32 - First `null` transaction_id in webhook logs
-- 14:45 - Freshdesk ticket from UTMfy
+- 14:45 - Support ticket from integration partner
 - 15:10 - Investigation started
 
 **Evidence**:
 - Sentry: No errors in webhook service (silent failure)
 - Logs: `transaction_id: null` in 847 payloads since 14:30
 - DB: `SELECT * FROM sales WHERE transaction_id IS NULL AND created_at > '2026-09-15 14:00'` returned 312 rows
-- Deploy: `seller-greenn-back` deployed at 14:28 (PR #4521)
+- Deploy: `backend-service` deployed at 14:28 (PR #1234)
 
 **Hypotheses**:
 | # | Hypothesis | Likelihood | Next step |
 |---|------------|------------|-----------|
-| 1 | PR #4521 broke transaction_id population | High | Diff the PR, check the changed query |
+| 1 | PR #1234 broke transaction_id population | High | Diff the PR, check the changed query |
 | 2 | Gateway not returning transaction_id | Low | Check gateway logs for same window |
 
-**Recommendation**: Review PR #4521 diff, likely regression in sale creation flow
+**Recommendation**: Review PR #1234 diff, likely regression in sale creation flow

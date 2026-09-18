@@ -97,7 +97,7 @@ Subscribers can only pay with credit card. PIX has lower fees and some users pre
 - PIX for one-time purchases (different flow)
 
 ### Constraints
-- Must use existing Pagarme integration
+- Must use existing payment gateway integration
 - Cannot change subscription billing date logic
 - Launch before Black Friday (8 weeks)
 
