@@ -8,7 +8,7 @@ A **reference stack** for harness engineering: skills, MCP configs, memory patte
 
 ## What to do
 
-1. **Read first:** `README.md` → understand the four layers (context, tools, memory, guardrails)
+1. **Read first:** `README.md` → four layers (context, tools, memory, guardrails). For harness **design** work, also read `docs/fowler-harness-model.md` (guia/sensor, outer harness) and align examples with both loops.
 2. **Respect structure:** skills go in `skills/`, MCP configs in `mcp/`, etc.
 3. **Copy, don't fork:** users copy individual files to their projects, not the whole repo
 
