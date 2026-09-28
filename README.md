@@ -227,6 +227,31 @@ Copy to a new project:
 cp -r examples/kiro-setup/.kiro ~/my-project/
 ```
 
+### Product AGENTS.md template
+
+```bash
+cp examples/product/AGENTS.md ~/my-project/AGENTS.md
+```
+
+Guide for the product repo: vision, stack, architecture, folders, code rules. The knowledge-base contract lives in [`examples/knowledge-base/AGENTS.md`](examples/knowledge-base/AGENTS.md). Different repos, different files.
+
+### Executable skill: database-migration-checker
+
+A skill that runs a sensor. The text is the guide, `scripts/validate_migration.py` refuses destructive migration steps (exit 1 blocks the PR).
+
+```bash
+python3 examples/database-migration-checker/scripts/validate_migration.py --path <migration.sql>
+```
+
+### Ralph loop: long work that stops on the sensor
+
+Plan file is the guide, sensor command is the feedback, `MAX_ITERS` bounds the loop.
+
+```bash
+cd examples/ralph-loop
+TASK_FILE=task.md SENSOR="./sensor.sh" MAX_ITERS=3 ./ralph.sh
+```
+
 ---
 
 ## Related
